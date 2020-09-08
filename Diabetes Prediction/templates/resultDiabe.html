@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Diabetes Predictor</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='resdia.css') }}">
+		<style>
+	
+		</style>
+	</head>
+	<body>
+	
+	<div class="results">
+			{% if prediction== 1 %}
+				<h1>Prediction: You are prone to Diabetes</span></h1>
+				
+			{% elif prediction==0 %}
+				<h1>Prediction:Great! You don't have diabetes.</span></h1>
+				
+			{% endif %}
+	</div>
+	</body>
+</html>
