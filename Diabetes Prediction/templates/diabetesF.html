@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diabetes Predictor</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='diab.css') }}">
+	<meta charset="utf-8">
+</head>
+<body>
+	<section class="banner" id="sec">
+	<header>
+			<a href="#" class="logo">Alchemist</a>
+			<div id="toggle" onclick="toggle()"></div>
+	</header>
+	</section>
+	<div id="navigation">
+			<ul>
+			<li data-text="Home"><a href="ProjHF.html">Home</a></li>
+			<li data-text="Diabetes Predictor"><a href="subSHOP withdet.html">Diabetes Predictor</a></li>
+			<li data-text="Engineer Yourself"><a href="#">Engineer Yourself</a></li>
+			<li data-text="Compendium"><a href="#">Compendium</a></li>
+			<li data-text="Account"><a href="#">Account</a></li>
+			</ul>
+	</div>
+	<script type="text/javascript">
+	function toggle()
+	{
+		var sec= document.getElementById('sec');
+		var nav= document.getElementById('navigation');
+		sec.classList.toggle('active')
+		nav.classList.toggle('active')
+	}
+	</script>
+	<div class="ml-container">
+			<h1><span> Diabetes Predictor</span></h1>
+    		<form action="{{ url_for('predict') }}" method="POST">
+                <input class="input-box" type="text" name="pregnancies" placeholder="Number of Pregnancies"><br>
+                <input class="input-box" type="text" name="glucose" placeholder="Glucose(mg/dL)"><br>
+                <input class="input-box" type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg)"><br>
+
+                <input class="input-box" type="text" name="insulin" placeholder="Insulin Level (IU/mL)"><br>
+                <input class="input-box" type="text" name="bmi" placeholder="Body Mass Index (kg/m²)"><br>
+
+                <input class="input-box" type="text" name="age" placeholder="Age (years)"><br>
+
+        		<a href="#">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<input type="submit" value="Predict">
+				</a>
+				
+        	</form>
+    </div>
+</body>
+</html>
